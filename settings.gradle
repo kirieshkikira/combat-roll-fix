@@ -1,14 +1,9 @@
 pluginManagement {
 	repositories {
-		maven {
-			name = 'Fabric'
-			url = 'https://maven.fabricmc.net/'
-			maven { url "https://modrinth.com" }
-		}
+		maven { url "https://fabricmc.net" }
 		mavenCentral()
 		gradlePluginPortal()
 	}
 }
 
-// Should match your modid
-rootProject.name = 'modid'
+rootProject.name = "combat-roll-fix"
