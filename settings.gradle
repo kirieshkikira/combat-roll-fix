@@ -3,6 +3,7 @@ pluginManagement {
 		maven {
 			name = 'Fabric'
 			url = 'https://maven.fabricmc.net/'
+			maven { url "https://modrinth.com" }
 		}
 		mavenCentral()
 		gradlePluginPortal()
