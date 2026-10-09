@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.7-SNAPSHOT'
+	id 'fabric-loom' version '1.9-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -15,13 +15,13 @@ repositories {
 }
 
 dependencies {
-	minecraft "com.mojang:minecraft:1.21"
-	mappings "net.fabricmc:yarn:1.21+build.2:v2"
-	modImplementation "net.fabricmc:fabric-loader:0.15.11"
+	minecraft "com.mojang:minecraft:26.3"
+	mappings "net.fabricmc:yarn:26.3+build.1:v2"
+	modImplementation "net.fabricmc:fabric-loader:0.16.0"
 	
-	// Подключаем Combat Roll версии 26.3 и библиотеки под 1.21
+	// Зависимости под версию 26.3
 	modImplementation "maven.modrinth:combat-roll:3.0.1+26.3-fabric"
-	modImplementation "maven.modrinth:azurelib:3.0.0+1.21-fabric"
+	modImplementation "maven.modrinth:azurelib:3.0.0+26.3-fabric"
 }
 
 processResources {
@@ -34,17 +34,11 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-	it.options.release = 21
+	it.options.release = 25
 }
 
 java {
 	withSourcesJar()
-	sourceCompatibility = JavaVersion.VERSION_21
-	targetCompatibility = JavaVersion.VERSION_21
-}
-
-jar {
-	from("LICENSE") {
-		rename { "${it}_${project.base.archivesName.get()}"}
-	}
+	sourceCompatibility = JavaVersion.VERSION_25
+	targetCompatibility = JavaVersion.VERSION_25
 }
