@@ -1,9 +1,17 @@
 pluginManagement {
-	repositories {
-		maven { url "https://fabricmc.net" }
-		mavenCentral()
-		gradlePluginPortal()
-	}
+    repositories {
+        maven { url "https://fabricmc.net" }
+        maven { url "https://gradle.org" }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        maven { url "https://fabricmc.net" }
+    }
 }
 
 rootProject.name = "combat-roll-fix"
